@@ -20,7 +20,7 @@ There is a **StyleTransferModel.mlmodel** file that was trained for a quick demo
 
 There are also three additional Swift files. **Image.swift** contains `UIImage` extensions for cropping, resizing, and creating `CVPixelBuffer` from a given image. This file also includes a function `styled(with modelSelection: StyleModel) -> UIImage` that will return a copy of the image it is called on, styled with the model and options provided.
 
-**StyleModel.swift** is the file provided the enumeration passed to the `styled(with:)` function. Its cases correspond to the styles the .mlmodel file was trained with. **Utils.swift** just contains a few general-purpose extensions to make code nicer to read and write, including functions for `MLMultiArray`s, `CVPixelBuffer`s and `CGContext`s.
+**StyleModel.swift** is the file provided the enumeration passed to the `styled(with:)` function. Its cases correspond to the styles the .mlmodel file was trained with. **Utils.swift** just contains a few general-purpose extensions to make code nicer to read and write, including functions for `MLMultiArray`, `CVPixelBuffer` and `CGContext` types.
 
 ### Creating a new MLModel
 
