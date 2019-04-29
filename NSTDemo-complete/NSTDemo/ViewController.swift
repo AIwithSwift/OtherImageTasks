@@ -100,12 +100,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIPicker
     // MARK: Functionality
     
     private func performStyleTransfer() {
-        let styledImage = inputImage?.styled(with: modelSelection)
+        outputImage = inputImage?.styled(with: modelSelection)
         
-        if styledImage == nil {
+        if outputImage == nil {
             summonAlertView()
-        } else {
-            outputImage = styledImage
         }
         
         refresh()
@@ -122,7 +120,7 @@ extension ViewController: UIImagePickerControllerDelegate {
         refresh()
         
         if inputImage == nil {
-            summonAlertView(message: "Image was malformed or too small (must be at least \(modelSelection.constraints.width) * \(modelSelection.constraints.height)).")
+            summonAlertView(message: "Image was malformed.")
         }
     }
 }

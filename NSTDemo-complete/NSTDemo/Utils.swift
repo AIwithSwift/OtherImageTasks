@@ -55,11 +55,7 @@ extension CVPixelBuffer {
     }
 }
 
-// MARK: CGContext Extensions
-
-extension CGColorSpace {
-    static var deviceRGB: CGColorSpace { return CGColorSpaceCreateDeviceRGB() }
-}
+// MARK: CGContext Extension
 
 extension CGContext {
     
@@ -72,7 +68,7 @@ extension CGContext {
             height: pixelBuffer.height,
             bitsPerComponent: 8,
             bytesPerRow: pixelBuffer.bytesPerRow,
-            space: CGColorSpace.deviceRGB,
+            space: CGColorSpaceCreateDeviceRGB(),
             bitmapInfo: CGBitmapInfo.byteOrder32Little.rawValue | CGImageAlphaInfo.noneSkipFirst.rawValue
         )
     }
@@ -87,7 +83,15 @@ extension CGContext {
     }
 }
 
-// MARK: UIColor Extensions
+// MARK: CGSize Extension
+
+extension CGSize: CustomStringConvertible {
+    public var description: String {
+        return "\(self.width) * \(self.height)"
+    }
+}
+
+// MARK: UIColor Extension
 
 extension UIColor {
     static let systemBlue = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)

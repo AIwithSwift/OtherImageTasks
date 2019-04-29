@@ -13,12 +13,11 @@ enum StyleModel: String, CaseIterable {
     case flip = "Upside Down"
 
     // =====================================================================
-    // TODO: add new properties
+    // TODO 1: add new properties
     // =====================================================================
     
-    static var styles: [StyleModel] { return self.allCases }
-    
     init(index: Int) { self = StyleModel.styles[index] }
+    static var styles: [StyleModel] { return self.allCases }
     
     var name: String { return self.rawValue }
     var styleIndex: Int { return StyleModel.styles.firstIndex(of: self)! }

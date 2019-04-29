@@ -16,7 +16,7 @@ import CoreML
 
 extension UIImage{
     
-    static var placeholder = UIImage(named: "placeholder.png")!
+    static let placeholder = UIImage(named: "placeholder.png")!
     
     /// Attempts Neural Style Transfer upon UIImage with given .mlmodel and input options
     /// - parameter modelSelection: StyleModel enum case selected to pass as .mlmodel option

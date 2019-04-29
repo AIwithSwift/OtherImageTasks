@@ -16,14 +16,14 @@ import CoreML
 
 extension UIImage{
     
-    static var placeholder = UIImage(named: "placeholder.png")!
+    static let placeholder = UIImage(named: "placeholder.png")!
     
     /// Attempts Neural Style Transfer upon UIImage with given .mlmodel and input options
     /// - parameter modelSelection: StyleModel enum case selected to pass as .mlmodel option
     func styled(with modelSelection: StyleModel) -> UIImage? {
         
         // =====================================================================
-        // TODO: replace function body
+        // TODO 3: replace function body
         guard let cgImage = self.cgImage else { return nil }
         return  UIImage(cgImage: cgImage, scale: 1.0, orientation: .downMirrored)
         // =====================================================================
